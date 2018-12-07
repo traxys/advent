@@ -3,6 +3,12 @@ CXXFLAGS=-Wall -Wextra
 
 BINDIR=bin
 
+day7: Day7/complicatedPlanning.cpp
+	$(CXX) Day7/complicatedPlanning.cpp -o $(BINDIR)/complicatedPlanning
+
+day6: Day6/largestNeighbouring.cpp
+	$(CXX) Day6/largestNeighbouring.cpp -o $(BINDIR)/largestNeighbouring
+
 day5: Day5/alchemicalReduction.cpp Day5/alchemicalTriming.cpp
 	$(CXX) Day5/alchemicalReduction.cpp -o $(BINDIR)/alchemicalReduction
 	$(CXX) Day5/alchemicalTriming.cpp -o $(BINDIR)/alchemicalTriming
@@ -22,4 +28,4 @@ day2 : Day2/basicChecksum.cpp Day2/findBoxLabel.cpp
 day3 : Day3/overlappingSlices.cpp
 	$(CXX) Day3/overlappingSlices.cpp -o $(BINDIR)/overlappingSlices
 
-all: day1 day2 day3 day4 day5
+all: day1 day2 day3 day4 day5 day6
