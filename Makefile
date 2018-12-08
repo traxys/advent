@@ -3,8 +3,12 @@ CXXFLAGS=-Wall -Wextra
 
 BINDIR=bin
 
-day7: Day7/complicatedPlanning.cpp
+day8: Day8/treeSummation.cpp
+	$(CXX) Day8/treeSummation.cpp -o $(BINDIR)/treeSummation
+
+day7: Day7/complicatedPlanning.cpp Day7/sharedPlanning.cpp
 	$(CXX) Day7/complicatedPlanning.cpp -o $(BINDIR)/complicatedPlanning
+	$(CXX) Day7/sharedPlanning.cpp -o $(BINDIR)/sharedPlanning
 
 day6: Day6/largestNeighbouring.cpp
 	$(CXX) Day6/largestNeighbouring.cpp -o $(BINDIR)/largestNeighbouring
