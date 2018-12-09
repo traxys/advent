@@ -3,6 +3,9 @@ CXXFLAGS=-Wall -Wextra
 
 BINDIR=bin
 
+day9: Day9/marbleCircle.cpp
+	$(CXX) Day9/marbleCircle.cpp -o $(BINDIR)/marbleCircle
+
 day8: Day8/treeSummation.cpp
 	$(CXX) Day8/treeSummation.cpp -o $(BINDIR)/treeSummation
 
@@ -32,4 +35,4 @@ day2 : Day2/basicChecksum.cpp Day2/findBoxLabel.cpp
 day3 : Day3/overlappingSlices.cpp
 	$(CXX) Day3/overlappingSlices.cpp -o $(BINDIR)/overlappingSlices
 
-all: day1 day2 day3 day4 day5 day6
+all: day1 day2 day3 day4 day5 day6 day8 day9
