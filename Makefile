@@ -3,6 +3,9 @@ CXXFLAGS=-Wall -Wextra
 
 BINDIR=bin
 
+day10: Day10/floatingText.cpp
+	$(CXX) Day10/floatingText.cpp -o $(BINDIR)/floatingText
+
 day9: Day9/marbleCircle.cpp
 	$(CXX) Day9/marbleCircle.cpp -o $(BINDIR)/marbleCircle
 
@@ -35,7 +38,7 @@ day2 : Day2/basicChecksum.cpp Day2/findBoxLabel.cpp
 day3 : Day3/overlappingSlices.cpp
 	$(CXX) Day3/overlappingSlices.cpp -o $(BINDIR)/overlappingSlices
 
-all: day1 day2 day3 day4 day5 day6 day7 day8 day9
+all: day1 day2 day3 day4 day5 day6 day7 day8 day9 day10
 
 clean:
 	rm $(BINDIR)/*
