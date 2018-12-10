@@ -56,6 +56,10 @@ std::pair<Point,Point> box(const std::vector<Point>& points){
 	return {topL, botR};
 }
 
+uint64_t boxArea(const std::pair<Point,Point>& bx){
+	return (bx.second.x - bx.first.x) * (bx.first.y - bx.second.y);
+}
+
 void printPoints(const std::vector<Point>& points){
 	auto corners = box(points);
 	std::set<Point> noidpts;
@@ -94,15 +98,21 @@ int main(){
 		++i;
 	}
 	uint64_t t = 1;
+	uint64_t oldArea = 0xffffffffffffffff;
 	while(true){
-		for(auto& p : points){
+		std::vector<Point> newPoints(points);
+		for(auto& p : newPoints){
 			p.move(velocities.at(p.id));
 		}
-		auto corners = box(points);
-		if(corners.second.x - corners.first.x < 120){
+		auto corners = box(newPoints);
+		uint64_t newArea = boxArea(corners);
+		if(newArea > oldArea && (corners.second.x - corners.first.x) < 300){
 			std::cout << "At t = "<< t << std::endl;
 			printPoints(points);
-			std::this_thread::sleep_for(std::chrono::seconds(2));	
+			break;
+		}else{
+			points = newPoints;
+			oldArea = newArea;
 		}
 		++t;
 	}
