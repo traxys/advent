@@ -3,6 +3,15 @@ CXXFLAGS=-Wall -Wextra
 
 BINDIR=bin
 
+day13: Day13/crashingTrains.cpp
+	$(CXX) Day13/crashingTrains.cpp -o $(BINDIR)/crashingTrains
+
+day12: Day12/spreadingPlants.cpp
+	$(CXX) Day12/spreadingPlants.cpp -o $(BINDIR)/spreadingPlants
+
+day11: Day11/powerGrid.cpp
+	$(CXX) Day11/powerGrid.cpp -o $(BINDIR)/powerGrid
+
 day10: Day10/floatingText.cpp
 	$(CXX) Day10/floatingText.cpp -o $(BINDIR)/floatingText
 
@@ -38,7 +47,7 @@ day2 : Day2/basicChecksum.cpp Day2/findBoxLabel.cpp
 day3 : Day3/overlappingSlices.cpp
 	$(CXX) Day3/overlappingSlices.cpp -o $(BINDIR)/overlappingSlices
 
-all: day1 day2 day3 day4 day5 day6 day7 day8 day9 day10
+all: day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11
 
 clean:
 	rm $(BINDIR)/*
