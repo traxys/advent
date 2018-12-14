@@ -178,7 +178,6 @@ int main(){
 		std::sort(carts.begin(), carts.end());
 		//printGrid(grid, carts);
 	}
-	std::cout << carts.size() << std::endl;
 	carts[0].move(grid);
 	std::cout << "Last cart is at : " << carts[0].y << "," <<
 		carts[0].x << std::endl;
